@@ -7,10 +7,10 @@ export { Switch }
 class Switch extends Source{
     static{
         this.TEXTURE_OFF = new Image();
-        this.TEXTURE_OFF.src = '../Assets/OffSource.svg';
+        this.TEXTURE_OFF.src = 'https://daniel-work-gh.github.io/gates/Assets/OffSource.svg';
 
         this.TEXTURE_ON = new Image();
-        this.TEXTURE_ON.src = '../Assets/OnSource.svg';
+        this.TEXTURE_ON.src = 'https://daniel-work-gh.github.io/gates/Assets/OnSource.svg';
     }
 
     constructor(x = 0, y = 0){      
