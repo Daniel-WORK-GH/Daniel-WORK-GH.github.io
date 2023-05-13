@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Logic Gates</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    
+    <body oncontextmenu="return false;">
+        <div id="mymenu" class="sidenav">
+            <p class="btn">Logic Source</p>
+            <p class="btn">Clock</p>
+            <p class="btn">Or Gate</p>
+            <p class="btn">And Gate</p>
+            <p class="btn">Xor Gate</p>
+            <p class="btn">Not Gate</p>
+            <p class="btn">Nor Gate</p>
+            <p class="btn">Nand Gate</p>
+            <p class="btn">Xnor Gate</p>
+            <p class="btn">Lamp</p>
+        </div>
+
+        <canvas id="mycanvas" width="200" height="100" style="border:1px solid #000000;">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
+
+        <div class="menu" id="atrbmenu">
+            <h1>Clock Editor</h1> <br>
+            <form action="#" id="atrbform" autocomplete="off">
+                <label for="delay">ms Delay:</label>
+                <input type="text" width="160" id="delay" name="delay">
+            </form>
+            <button id="closebtn">Close</button>
+            <button id="savebtn">Save</button>
+        </div>
+
+        <script>
+            // Create the dialog box
+            var dialogBox = document.createElement('div');
+            dialogBox.className = 'dialog-box';
+            dialogBox.innerHTML += '<p>Welcome to my logic gates sim<br>Use the 2-5 keys to select number of logic gates inputs<br>Middle mouse click on elements, some are editable [currnlty Clock only]<br>Right click to delete obejcts<br><br>The connection points of elements are small black dots/obvious on the designs<br>When connecting wires to wires they can connect only on grid squares<br><br>If you find a bug please let me know by leaving a msg on GH :)</p><button class="dialog-button">OK</button>';
+    
+            // Add the dialog box to the body of the page
+            document.body.appendChild(dialogBox);
+    
+            // Add an event listener to the OK button to close the dialog box when clicked
+            var okButton = dialogBox.querySelector('.dialog-button');
+            okButton.addEventListener('click', function() {
+                dialogBox.parentNode.removeChild(dialogBox);
+            });
+        </script>
+
+        <script type="module" src="./program.js">
+        </script>
+    </body>
+</html>

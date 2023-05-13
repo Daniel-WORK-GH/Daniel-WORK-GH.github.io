@@ -1,0 +1,152 @@
+body{
+    overflow: hidden;
+}
+
+html, body, div, canvas {
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+}
+  
+.sidenav .btn {
+    padding: 16px 36px 0px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    margin: 0;
+    user-select: none;
+}
+  
+.sidenav .btn:hover {
+    color: #f1f1f1;
+}
+
+.menu {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 280px;
+    height: 280px;
+    padding: 36px;
+    margin: 0;
+    background-color: #222222;
+    display: none;
+    user-select: none
+}
+
+.menu h1 {
+    margin: 0;
+    padding: 0;
+    color: gainsboro;
+    text-decoration: underline;
+}
+
+.menu-text {
+    width: 100px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0px 0px 0px 16px;
+    position: absolute;
+    right : 36px;
+    color: black;
+}
+
+.menu-checkbox {
+    width: 30px;
+    height: 30px;
+    color: #333333;
+    background-color: #333333;
+    border: 2px solid #666666;
+    margin: 0px 0px 0px 16px;
+    position: absolute;
+    right : 36px;
+}
+
+.menu label {
+    width: 160px;
+    text-decoration: none;
+    font-size: 22px;
+    color: gainsboro;
+}
+
+.menu #closebtn {
+    position: absolute;
+    bottom: 36px;
+    right: 36px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #222222;
+    border: 1px solid grey;
+    color: gainsboro;
+    padding: 8px;
+    border-radius: 0;
+}
+
+.menu #savebtn {
+    position: absolute;
+    bottom: 36px;
+    left : 36px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #222222;
+    border: 1px solid grey;
+    color: gainsboro;
+    padding: 8px;
+    border-radius: 0;
+}
+
+.menu #closebtn:hover {
+    color: rgb(255, 255, 255);
+}
+
+.menu #savebtn:hover {
+    color: rgb(255, 255, 255);
+}
+
+.dialog-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #222222;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 9999;
+    user-select: none;
+}
+
+.dialog-box p {
+    padding: 16px 16px 0px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: gainsboro;
+    display: block;
+    font: Verdana;
+}
+
+/* Style the button */
+.dialog-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #222222;
+    border: 1px solid grey;
+    color: gainsboro;
+    border-radius: 0;
+}
+.dialog-button:hover {
+    color: white;
+}
