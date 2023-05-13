@@ -5,7 +5,7 @@ export {NorGate}
 class NorGate extends OrGate{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/Nor.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/Nor.svg';
     }
     
     constructor(x = 0, y = 0, inputs = 2){

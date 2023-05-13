@@ -9,7 +9,7 @@ const TESTING = false;
 class XorGate extends GateN{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/Xor.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/Xor.svg';
     }
     
     constructor(x = 0, y = 0, inputs = 4){

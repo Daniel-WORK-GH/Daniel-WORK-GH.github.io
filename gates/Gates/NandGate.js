@@ -5,7 +5,7 @@ export {NandGate}
 class NandGate extends AndGate{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/Nand.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/Nand.svg';
     }
     
     constructor(x = 0, y = 0, inputs = 2){

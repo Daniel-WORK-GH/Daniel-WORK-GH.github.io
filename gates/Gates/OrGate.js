@@ -9,7 +9,7 @@ const TESTING = false;
 class OrGate extends GateN{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/Or.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/Or.svg';
     }
     
     constructor(x = 0, y = 0, inputs = 2){

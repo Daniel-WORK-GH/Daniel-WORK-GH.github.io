@@ -9,7 +9,7 @@ const TESTING = false;
 class NotGate extends GateN{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/Not.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/Not.svg';
     }
     
     constructor(x = 0, y = 0){

@@ -5,7 +5,7 @@ export { XnorGate }
 class XnorGate extends XorGate{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/Xnor.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/Xnor.svg';
     }
     
     constructor(x = 0, y = 0, inputs = 4){

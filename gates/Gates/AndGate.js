@@ -6,7 +6,7 @@ export { AndGate }
 class AndGate extends GateN{
     static{
         this.TEXTURE = new Image();
-        this.TEXTURE.src = '../Assets/And.svg';
+        this.TEXTURE.src = 'https://daniel-work-gh.github.io/gates/Assets/And.svg';
     }
     
     constructor(x = 0, y = 0, inputs = 2){
