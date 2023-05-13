@@ -6,10 +6,10 @@ export { Lamp }
 class Lamp extends Destination{
     static{
         this.TEXTURE_OFF = new Image();
-        this.TEXTURE_OFF.src = '../Assets/OffLamp.svg';
+        this.TEXTURE_OFF.src = 'https://daniel-work-gh.github.io/gates/Assets/OffLamp.svg';
 
         this.TEXTURE_ON = new Image();
-        this.TEXTURE_ON.src = '../Assets/OnLamp.svg';
+        this.TEXTURE_ON.src = 'https://daniel-work-gh.github.io/gates/Assets/OnLamp.svg';
     }
 
     constructor(x = 0, y = 0){
