@@ -33,6 +33,11 @@
 
     --not_selected_line: #404040;
     --selected_line: #707070;
+
+
+
+    --phone_line_number_menu_width: 90px;
+    --phone_body_padding: 90px;
 }
 
 /*Developer: Generate Color Theme From Current Settings*/
@@ -40,16 +45,6 @@
 html{
     scroll-behavior:instant ;
 }
-
-
-html.rotate {  
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
 
 .contentSection {
     padding-top: 16px;
@@ -200,6 +195,8 @@ ul.numbersList li {
     border-color:var(--menu_border);
 
     overflow: hidden;
+
+    transition-duration: 0s;
 }
 
 .linenumberMenu * {
@@ -335,4 +332,45 @@ input.submit{
 
 .notselectedline {
     background-color: var(--not_selected_line);
+}
+
+@media screen and (orientation: portrait) {
+
+
+    body {
+        padding-left: var(--phone_body_padding);
+
+        width: -webkit-calc(100% - var(--line_number_menu_width));
+        width:    -moz-calc(100% - var(--line_number_menu_width));
+        width:         calc(100% - var(--line_number_menu_width));
+    }
+
+    bigger{
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .contentSection {
+        width: 100%;
+    }
+
+    .sidenav{
+        display: none;
+    }
+
+    .linenumberMenu {
+        left: 0px;
+        transition-duration: 0s;
+    }
+
+    #tabs {
+        left: 0px;
+    }
 }

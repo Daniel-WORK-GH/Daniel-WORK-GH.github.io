@@ -80,10 +80,12 @@ function setLineNumbers(tabname)
         }
     }
     
+    if(tabname == "contactMeTab") return;
+    console.log((tabname));
     //for scroll offset
     let ul = document.createElement("ul");        
     ul.className = "numbersList";
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 20; i++) {
         let li = document.createElement("li")
         li.innerHTML = "<br>";
         ul.appendChild(li);

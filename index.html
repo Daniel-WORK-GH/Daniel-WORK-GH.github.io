@@ -249,7 +249,7 @@
                 <variable>page</variable> = <str>"Contact me"</str>;
             </h1>
             <h2>
-                <variable>email</variable> = <str>"Danielnazwork@gmail.com"</str>;
+                <variable>email</variable> = <a href="mailto:danielnazwork@gmail.com" style="color: white;"><str>"Danielnazwork@gmail.com"</a></str>;
             </h2>
             <h2>
                 <variable>github</variable> = <a href="https://github.com/Daniel-WORK-GH" style="color: white;">
@@ -320,18 +320,16 @@
         }
         var mobile = mobileCheck();
 
-        //console.log(mobile);
-
         let portrait = window.matchMedia("(orientation: portrait)");
         portrait.addEventListener("change", function(e) {
-            if(!mobile) return;
+            realoadNumbersCurrentTab(); 
+            drawFoldLines();
 
             if(e.matches) {
                 // Portrait mode       
-                //document.getElementsByTagName('html')[0].classList.add('rotate');
             } else {
                 // Landscape
-                //document.getElementsByTagName('html')[0].classList.remove('rotate');
+                
             }
         })
     </script>
