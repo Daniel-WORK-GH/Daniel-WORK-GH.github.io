@@ -14,8 +14,10 @@ function setSize(){
 
     let body = document.getElementsByTagName('body')[0];
 
-    body.style.transform = `scale(${scale})`;
-    body.style.transformOrigin = `0 0`;
+    let html = document.getElementsByTagName('html')[0];
+
+    html.style.transform = `scale(${scale})`;
+    html.style.transformOrigin = `0 0`;
 }
 
 var previousheight = -1;
