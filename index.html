@@ -55,7 +55,7 @@
                 <comment>/*Side note: this portfolio is written in JS & Html,<br>
                     and <bigger>is an obviuos recreation of my favorite IDE <value>visual studio code</value> by
                         microsoft.</bigger><br>
-                    Also, this will look best on dark browser theme (The correct theme)<br> or on full screen [F11].<br><br>
+                    Also, this will look best on dark browser theme (The correct theme)<br> or on full screen [F11]<br><br>
                     And i know i need to fix the mobile version :'(*/
                 </comment>
             </div>
@@ -304,6 +304,35 @@
     <script src="/resizing.js"></script>
 
     <script>
+        function mobileCheck() {
+            if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+                return true ;
+            } else {
+                return false ;
+            }
+        }
+        var mobile = mobileCheck();
+
+        console.log(mobile);
+
+        let portrait = window.matchMedia("(orientation: portrait)");
+        portrait.addEventListener("change", function(e) {
+            if(!mobile) return;
+
+            if(e.matches) {
+                // Portrait mode       
+                document.getElementsByTagName('html')[0].classList.add('rotate');
+            } else {
+                // Landscape
+                document.getElementsByTagName('html')[0].classList.remove('rotate');
+            }
+        })
     </script>
 
     <script>

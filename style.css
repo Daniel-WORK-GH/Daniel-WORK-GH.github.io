@@ -41,15 +41,15 @@ html{
     scroll-behavior:instant ;
 }
 
-@media only screen and (orientation:portrait){
-    html {  
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
+
+html.rotate {  
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
+
 
 .contentSection {
     padding-top: 16px;
