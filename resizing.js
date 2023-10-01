@@ -8,16 +8,19 @@ function setSize(){
     let diagonal = Math.sqrt(width * width + height * height)
     let exdiagonal = Math.sqrt(expectedwidth * expectedwidth + expectedheight * expectedheight)
 
-    if(diagonal > exdiagonal) return;
+    if(width > height) return;
 
-    let scale = diagonal / exdiagonal;
+    let scale = diagonal / (exdiagonal / 3);
 
-    let body = document.getElementsByTagName('body')[0];
+    var r = document.querySelector(':root');
+    
+    console.log('asdas');
+    r.style.setProperty('--paragraph_font_size', '16px');
 
-    let html = document.getElementsByTagName('html')[0];
+    let viewport = document.querySelector("meta[name=viewport]");
+    console.log(viewport);
+    viewport.setAttribute('content', `width=device-width, initial-scale=${scale}, user-scalable=0`);
 
-    html.style.transform = `scale(${scale})`;
-    html.style.transformOrigin = `0 0`;
 }
 
 var previousheight = -1;
@@ -99,7 +102,7 @@ function mobileCheck() {
 }
 var mobile = mobileCheck();
 
-if(!mobile){
+if(mobile){
     setSize();
 }
 
