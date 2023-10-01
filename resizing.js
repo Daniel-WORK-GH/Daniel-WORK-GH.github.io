@@ -3,7 +3,7 @@ function setSize(){
     let height = window.screen.height;
 
     let expectedwidth = 2560;
-    let expectedheight = 1140;
+    let expectedheight = 1440;
 
     let diagonal = Math.sqrt(width * width + height * height)
     let exdiagonal = Math.sqrt(expectedwidth * expectedwidth + expectedheight * expectedheight)
