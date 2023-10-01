@@ -5,7 +5,7 @@ function setSize(){
     let expectedwidth = 2560;
     let expectedheight = 1140;
 
-    let diagonal = Math.sqrt(width * width + height * width)
+    let diagonal = Math.sqrt(width * width + height * height)
     let exdiagonal = Math.sqrt(expectedwidth * expectedwidth + expectedheight * expectedheight)
 
     if(diagonal > exdiagonal) return;
@@ -96,9 +96,6 @@ function mobileCheck() {
     }
 }
 var mobile = mobileCheck();
-
-
-setSize();
 
 setTextareaSize();
 

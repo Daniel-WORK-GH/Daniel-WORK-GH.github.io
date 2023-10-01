@@ -108,6 +108,8 @@ body {
     font-family: "Consolas";
     background-color: var(--page_background);
     overflow-x: hidden;
+
+    max-width: 100%;
 }
 
 ul.numbersList {
@@ -340,21 +342,13 @@ input.submit{
     body {
         padding-left: var(--phone_body_padding);
 
-        width: -webkit-calc(100% - var(--line_number_menu_width));
-        width:    -moz-calc(100% - var(--line_number_menu_width));
-        width:         calc(100% - var(--line_number_menu_width));
+        width: -webkit-calc(100% + var(--line_number_menu_width));
+        width:    -moz-calc(100% + var(--line_number_menu_width));
+        width:         calc(100% + var(--line_number_menu_width));
     }
 
     bigger{
         font-size: 20px;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
-
-    h2 {
-        font-size: 22px;
     }
 
     .contentSection {
