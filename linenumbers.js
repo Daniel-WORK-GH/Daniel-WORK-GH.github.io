@@ -81,7 +81,7 @@ function setLineNumbers(tabname)
     }
     
     if(tabname == "contactMeTab") return;
-    console.log((tabname));
+    
     //for scroll offset
     let ul = document.createElement("ul");        
     ul.className = "numbersList";
