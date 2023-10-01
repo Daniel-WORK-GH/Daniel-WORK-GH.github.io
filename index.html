@@ -319,7 +319,7 @@
         }
         var mobile = mobileCheck();
 
-        console.log(mobile);
+        //console.log(mobile);
 
         let portrait = window.matchMedia("(orientation: portrait)");
         portrait.addEventListener("change", function(e) {
@@ -327,10 +327,10 @@
 
             if(e.matches) {
                 // Portrait mode       
-                document.getElementsByTagName('html')[0].classList.add('rotate');
+                //document.getElementsByTagName('html')[0].classList.add('rotate');
             } else {
                 // Landscape
-                document.getElementsByTagName('html')[0].classList.remove('rotate');
+                //document.getElementsByTagName('html')[0].classList.remove('rotate');
             }
         })
     </script>
