@@ -5,9 +5,12 @@ function setSize(){
     let expectedwidth = 2560;
     let expectedheight = 1140;
 
-    if(height > expectedheight) return;
+    let diagonal = Math.sqrt(width * width + height * width)
+    let exdiagonal = Math.sqrt(expectedwidth * expectedwidth + expectedheight * expectedheight)
 
-    let scale = height / expectedheight;
+    if(diagonal > exdiagonal) return;
+
+    let scale = diagonal / exdiagonal;
 
     let body = document.getElementsByTagName('body')[0];
 
@@ -93,6 +96,7 @@ function mobileCheck() {
     }
 }
 var mobile = mobileCheck();
+
 
 setSize();
 
