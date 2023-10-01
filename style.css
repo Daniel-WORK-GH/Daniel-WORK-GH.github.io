@@ -41,6 +41,16 @@ html{
     scroll-behavior:instant ;
 }
 
+@media only screen and (orientation:portrait){
+    html {  
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
 .contentSection {
     padding-top: 16px;
     width: 1000px;
@@ -103,10 +113,6 @@ body {
     font-family: "Consolas";
     background-color: var(--page_background);
     overflow-x: hidden;
-}
-
-body.rotate{
-    orientation: landscape;
 }
 
 ul.numbersList {
