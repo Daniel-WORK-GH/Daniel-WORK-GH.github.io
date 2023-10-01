@@ -94,8 +94,7 @@ function mobileCheck() {
 }
 var mobile = mobileCheck();
 
-if(!mobile){
-    setSize();
-}
+setSize();
+
 setTextareaSize();
 
