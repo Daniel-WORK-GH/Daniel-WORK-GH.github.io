@@ -99,8 +99,7 @@ function mobileCheck() {
 }
 var mobile = mobileCheck();
 
-if(!mobile)
-{
+if(!mobile){
     setSize();
 }
 

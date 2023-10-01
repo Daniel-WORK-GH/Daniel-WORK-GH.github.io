@@ -337,8 +337,6 @@ input.submit{
 }
 
 @media screen and (orientation: portrait) {
-
-
     body {
         padding-left: var(--phone_body_padding);
 
