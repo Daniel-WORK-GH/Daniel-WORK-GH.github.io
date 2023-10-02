@@ -38,6 +38,8 @@
 
     --phone_line_number_menu_width: 90px;
     --phone_body_padding: 90px;
+
+    --warning_color: #facd00;
 }
 
 /*Developer: Generate Color Theme From Current Settings*/
@@ -100,6 +102,13 @@ err{
 bigger{
     font-weight: bolder;
     font-size: calc(var(--paragraph_font_size) + 1px);
+}
+
+warr{
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--warning_color);
+    text-decoration-thickness: 1px;
 }
 
 body {
