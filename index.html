@@ -1,16 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Resume {game}</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <canvas id="mycanvas" width="200" height="100" style="border:1px solid #000000;">
-            Your browser does not support the HTML canvas tag.
-        </canvas>    
+<html>
 
-        <script type="module" src="https://Daniel-WORK-GH.github.io/Program.js"></script>
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#3c3c3c">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/style.css">
+    <title>Daniel_resume</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a class="title">&#128899; PORTFOLIO</a>
+    </div>
+
+    <div id="myNumberMenu" class="linenumberMenu">
+    </div>
+
+    <div id="header"></div>
+
+    <div id="tabs">
+        <button class="tablink"
+            onclick="openPage('welcomeTab', this); reloadNumbers('welcomeTab'); updateCurrentMenu('welcomeTab'); drawFoldLines();"
+            id="defaultOpen">Main.js</button>
+        <button class="tablink"
+            onclick="openPage('miniProjectsTab', this); reloadNumbers('miniProjectsTab'); updateCurrentMenu('miniProjectsTab'); drawFoldLines();">Additional_Projects.js</button>
+        <button class="tablink"
+            onclick="openPage('contactMeTab', this); reloadNumbers('contactMeTab'); updateCurrentMenu('contactMeTab'); drawFoldLines();">Contact_Me.txt</button>
+    </div>
+
+    <div id="welcomeTab" class="tabcontent">
+        <a class="anchor" id="welcomeSectionA">About</a>
+        <div id="welcomeSection" class="contentSection">
+            <h1>
+                <variable>name</variable> = <str>"Daniel Nazrenko"</str>; <comment>//Press [F11]</comment>
+            </h1>
+            <div>
+                As stated above ^ my name is Daniel, welcome to my resume page :^). A little about me (feel free to go
+                straight to projects):
+                I'm a backend developer specialising in multiple <variable>languages</variable> = <type>new</type>[]{C#,
+                Python, <err>JavaScritp</err>, C++, C};
+                <br>
+                <comment>/*Programming language changes based on my needs*/</comment>
+
+                <br><br>I worked on a big veraity of projects, web, server, client, games and even did some freelancing
+                projects.
+                <br>
+                <comment>/*For example: an app for clocking in/out of a workplace with some special addons*/</comment>
+
+                <br><br>I started learning to code as a hobby from games and here i am, in the 2nd year of my computer
+                science, working as an
+                electronics teacher and would love to have a second job :).
+
+                <br><br>
+                <comment>/*Side note: this portfolio is written in JS & Html,<br>
+                    and <bigger>is an obviuos recreation of my favorite IDE <value>visual studio code</value> by
+                        microsoft.</bigger><br>
+                    Also, this will look best on dark browser theme (The correct theme)<br> or on full screen [F11]<br><br>
+                    And i know i need to fix the mobile version :'(*/
+                </comment>
+            </div>
+        </div>
+
+        <a class="anchor" id="projectsSectionA">Projects</a>
+        <div id="projectsSection" class="contentSection">
+            <h1>
+                <variable>showcase</variable> = <str>"projects"</str>;
+            </h1>
+            <div>
+                <type>public project</type>
+                <func>Logic_Gates_Simulator</func>(){<br>
+                <div class="tab">A circuit builder + simulation of digital logic gates.
+                    <br><br>Includes all the basic <variable>gates</variable> = <type>new</type>[]{<br>
+                    <div class="tab">
+                        Not, <br>
+                        Or, Nor <br>
+                        And, Nand, <br>
+                        Xor, Xnor <br>
+                    </div>
+                    }<br>
+                    Also include some basic components for inputs and oututs such as lamps / clocks.
+                    <br><br>The project is built using JavaScript and all the models are made by me using an online SVG
+                    maker.
+                    <br><br>Online website link : <a href="https://daniel-work-gh.github.io/gates"
+                        style="color: white;">
+                        <variable>Gates Sim</variable>
+                    </a>
+                    <br>Github project repo : <a href="https://github.com/Daniel-WORK-GH/logic_gates_sim"
+                        style="color: white;">
+                        <variable>Gates Sim files</variable>
+                    </a>
+                </div>
+                }
+            </div>
+            <br>
+            <div>
+                <type>public project</type>
+                <func>Online_Tilemap_Game</func>(){<br>
+                <div class="tab">A small 'game' i made as an interactive resume. This was the first project i made
+                    using JavaScript and was a learning process. There isnt any objective, walk on the text bubbles to
+                    read some things about me. Or get in the vehicle at the start base to explore the small world.
+
+                    <br><br>As usual this project was built using JS only and all the textures are made by me. All the
+                    movement,
+                    collision, and map loading system is custom made.
+
+                    <br><br>Online website link : <a href="https://daniel-work-gh.github.io/game" style="color: white;">
+                        <variable>Resume game</variable>
+                    </a>
+                    <br>Github project repo : <a href="https://github.com/Daniel-WORK-GH/mini_website_game"
+                        style="color: white;">
+                        <variable>Resume game files</variable>
+                    </a>
+                    <br><br>
+                    <comment>/*World editor i made :
+                        <a href="https://daniel-work-gh.github.io/game?editing=true" style="color: white;">
+                            <variable>Resume game editor</variable>
+                        </a>
+                        <div class="tab">
+                            Press [P] to download the map.
+                            <br>Press [1-2] to change layer.
+                            <br>[Right Click] text bubbles to edit text.
+                        </div>*/
+                    </comment>
+                </div>
+                }
+            </div>
+            <br>
+            <div>
+                <type>public project</type>
+                <func>URL_Shortener</func>(){<br>
+                <div class="tab">A simple but interesting project i made part of a python + sql learning process.
+                    Open a local web server using python, write a link to the textbox and get a shortened one.
+                    <br><br> The program will hash the link string and store it in the database, when someone enters
+                    the short link it will take him to the server and redirect to the desired site after fetchin it from
+                    the database.
+                    <br><br> If by some small chance the hash of the link already existing in the database, the program
+                    will
+                    find the next available one.
+
+                    <br><br>Github project repo : <a href="https://github.com/Daniel-WORK-GH/url_shortener"
+                        style="color: white;">
+                        <variable>URL shortener files</variable>
+                    </a>
+                </div>
+                }
+            </div>
+            <div style="margin-top: 350px; margin-bottom: 100px;">
+                <comment>/*Thank you for visiting,<br>
+                    you can find my contacts in the tabs at the top.*/</comment>
+            </div>
+        </div>
+    </div>
+
+    <div id="miniProjectsTab" class="tabcontent">
+        <a class="anchor" id="miniProjectsSectionA">Mini_Projects</a>
+        <div id="miniProjectsSection" class="contentSection">
+            <h1>
+                <variable>showcase</variable> = <str>"mini projects"</str>;
+            </h1>
+            <div>
+                <type>public project</type>
+                <func>Text_Based_Game_Engine</func>(){<br>
+                <div class="tab">When serching for portfolio worthy projects i saw a recomendation for text story game.
+                    My story telling abilities aren't that good, but my programming is ok. So i made a program to load
+                    text
+                    based story games, and some json synatx to go along with it.
+                    <br><br> There is a little explenation on the json story synatx in the GH readme + an example in the
+                    'story' folder.
+                    <br><br> The program is made using python and was made to learn working with json files.
+                    <br><br> Github project repo : <a href="https://github.com/Daniel-WORK-GH/text_game_eng"
+                        style="color: white;">
+                        <variable>Text game engine</variable>
+                    </a>
+                </div>
+                }
+            </div>
+            <br>
+            <div>
+                <type>public project</type>
+                <func>Wordle_Clone</func>(){<br>
+                <div class="tab">A simple python project i made for fun as part of a leaning experince.
+                    <br><br>Using a list of 100,000+ english words i made 4 text files of words of different lengths
+                    (5-8).
+                    After the user selects number of letters he will given a random words to guess. Each letter of the
+                    guess
+                    will be colored : red/ yellow/ green depending on if its incorect/ incorect position/ correct.
+
+                    <br><br> Github project repo : <a href="https://github.com/Daniel-WORK-GH/wordle-clone"
+                        style="color: white;">
+                        <variable>Wordle clone</variable>
+                    </a>
+                </div>
+                }
+            </div>
+            <br>
+            <div>
+                <type>public project</type>
+                <func>Portfolio</func>(){<br>
+                <div class="tab">This project is self explenetory and shouldn't be counted as a pojetct, but as someone
+                    with bad Html & Css skills I'm happy with the result so i'll showcase it.<br><br>
+                    Added some additional tags = <type>new</type>[]{<br>
+                    <div class="tab">
+                        Use &lt;variable&gt; tag to create a <variable>variable</variable><br>
+                        Use &lt;type&gt; tag to create a <type>variable type</type><br>
+                        Use &lt;comment&gt; tag to create a <comment>/*comment*/</comment><br>
+                        Use &lt;str&gt; tag to create a <str>"string"</str><br>
+                        Use &lt;err&gt; tag to create an <err>errur</err><br>
+                        Use &lt;func&gt; tag to create a <func>function</func>()<br>
+                    </div>
+                    }<br><br>
+                    In addition, all the lines are generated on resize, load. so if the width wasn't constant
+                    the line numbes would change accordingly.
+
+                    <br><br>You can find the files at <err>[ADD LINK]</err>
+                </div>
+                }
+            </div>
+            <br>
+            <div>
+                <type>public project</type>
+                <func>Addition_Content</func>(){<br>
+                <div class="tab">There are some more projects that i didnt see the point of writing here.
+                    Some mini-games and uni-project i worked on to help friends, for exapmle : flappy bird,
+                    battleships.<br>
+                    Or some mini-games i made to learn python : sudoku, tic-tac-toe, snake.<br>
+                    Or projects i made following tutorials : a 2D monogame physics engine. (Also added my own code and
+                    will unprivate when done)
+                    <br><br>If those interest you, visit my GitHub : <a
+                        href="https://github.com/Daniel-WORK-GH?tab=repositories" style="color: white;">
+                        <variable>Github repositories</variable>
+                    </a>
+                </div>
+                }
+            </div>
+
+            <div style="margin-top: 350px; margin-bottom: 100px;">
+                <comment>/*Thank you for visiting,<br>
+                    you can find my contacts in the tabs at the top.*/</comment>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactMeTab" class="tabcontent">
+        <a class="anchor" id="contactMeSectionA">Contact_Me</a>
+        <div id="contactMeSection" class="contentSection">
+            <h1>
+                <variable>page</variable> = <str>"Contact me"</str>;
+            </h1>
+            <h2>
+                <variable>email</variable> = <a href="mailto:danielnazwork@gmail.com" style="color: white;"><str>"Danielnazwork@gmail.com"</a></str>;
+            </h2>
+            <h2>
+                <variable>github</variable> = <a href="https://github.com/Daniel-WORK-GH" style="color: white;">
+                    <str>"Daniel-WORK-GH"</str></a>;
+            </h2>
+            <br><br>
+            <div>
+                <type>private messege</type>
+                <func>Leave_A_Message</func>(){<br>
+                <div id="contactmediv" class="tab">
+                    <comment>/*Prefer a direct mail if possible, the hosing services i use for sending aren't always
+                        reliable. (But they still should work most of the time)*/</comment> <br><br>
+
+                    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                    <form method="post" action="https://tempemailsender.000webhostapp.com/send.php" autocomplete="off" onsubmit="return handleSubmit()" target="dummyframe">
+                        <label for="name">
+                            <type>let</type>
+                            <variable>Name</variable> =
+                        </label>
+                        <str>"<input class="text" type="text" id="name" name="name" placeholder="John Doe">"</str>;<br>
+
+                        <label for="email">
+                            <type>let</type>
+                            <variable>Mail</variable> =
+                        </label>
+                        <str>"<input class="text" type="text" id="email" name="email" placeholder="John@gmail.com">"</str>;<br>
+
+                        <label for="message">
+                            <type>let</type>
+                            <variable>Message</variable> = <str>`</str>
+                                                            
+                            <div class="tab">
+                                <textarea class="text" id="message" name="message" cols="64" maxlength="400" placeholder="Enter a message.."></textarea>
+                            </div>
+                          
+                            <str>`</str>;
+
+                            <br><br><input id="submitbtn" class="submit" type="submit" value="Submit"><normal id="submitbrackets">();</normal>
+                    </form>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="/foldlines.js"></script>
+    <script src="/sidemenu.js"></script>
+    <script src="/linenumbers.js"></script>
+    <script src="/tab.js"></script>
+    <script src="/header.js"></script>
+    <script src="/scroll.js"></script>
+    <script src="/console.js"></script>
+    <script src="/resizing.js"></script>
+    
+    <script>
+        function mobileCheck() {
+            if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+                return true ;
+            } else {
+                return false ;
+            }
+        }
+        var mobile = mobileCheck();
+
+        let portrait = window.matchMedia("(orientation: portrait)");
+        portrait.addEventListener("change", function(e) {
+            realoadNumbersCurrentTab(); 
+            drawFoldLines();
+
+            if(e.matches) {
+                // Portrait mode       
+            } else {
+                // Landscape
+                
+            }
+        })
+    </script>
+
+    <script>
+        function handleSubmit() {
+            let btn = document.getElementById('submitbtn');
+            btn.parentElement.removeChild(btn);
+
+            let div = document.getElementById('contactmediv');
+
+            let comment = document.createElement('comment');
+            comment.innerHTML = '/*Thank you for sending a message! :)*/'
+            div.appendChild(comment);
+
+            let b = document.getElementById('submitbrackets');
+            b.parentElement.removeChild(b);
+
+            setTimeout(() =>{
+                document.getElementById('name').disabled = true;
+                document.getElementById('email').disabled = true;
+                document.getElementById('message').disabled = true;
+            }, 1000);
+
+            return true;
+        }
+    </script>
+</body>
+
 </html>
