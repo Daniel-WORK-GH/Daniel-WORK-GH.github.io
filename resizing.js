@@ -19,7 +19,7 @@ function setSizeMobile(){
 
     let scale = width / expectedwidth;
 
-    viewport.setAttribute('content', `width=device-width, initial-scale=10, user-scalable=1`);
+    viewport.setAttribute('content', `width=device-width, initial-scale=1, user-scalable=1`);
 }
 
 var previousheight = -1;
