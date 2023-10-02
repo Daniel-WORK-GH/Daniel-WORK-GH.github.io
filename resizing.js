@@ -1,4 +1,4 @@
-function setSize(){
+function setSizeMobile(){
     let width = window.screen.width;
     let height = window.screen.height;
 
@@ -10,17 +10,16 @@ function setSize(){
 
     if(width > height) return;
 
-    let scale = diagonal / (exdiagonal / 3);
-
     var r = document.querySelector(':root');
     
     console.log('asdas');
-    r.style.setProperty('--paragraph_font_size', '16px');
+    r.style.setProperty('--paragraph_font_size', '18px');
 
     let viewport = document.querySelector("meta[name=viewport]");
-    console.log(viewport);
-    viewport.setAttribute('content', `width=device-width, initial-scale=${scale}, user-scalable=0`);
 
+    let scale = width / expectedwidth;
+
+    viewport.setAttribute('content', `width=device-width, initial-scale=10, user-scalable=1`);
 }
 
 var previousheight = -1;
@@ -103,7 +102,7 @@ function mobileCheck() {
 var mobile = mobileCheck();
 
 if(mobile){
-    setSize();
+    setSizeMobile();
 }
 
 setTextareaSize();
