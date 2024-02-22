@@ -165,14 +165,6 @@ list.addEventListener('dragend', (e) => {
     drawCanvas();
 });
 
-// Reset the pickedup item when its let down
-document.addEventListener('mouseup', () => {
-    pickedup = undefined;
-    pickedupcopy = undefined;
-});
-
-
-
 // PHONE SUPPORT
 items[0].addEventListener("touchstart", tapHandler0);
 items[1].addEventListener("touchstart", tapHandler1);
@@ -242,6 +234,7 @@ function tapHandler2(event) {
 
 items[0].addEventListener('touchmove', function(e) {
     var pickedup = asrc;
+    asrc.style.visibility = 'visible' 
     const itemindex = getItemIndex(pickedup)
 
     var touchpos = e.targetTouches[0];
@@ -256,10 +249,12 @@ items[0].addEventListener('touchmove', function(e) {
         console.log(`${touchpos.pageX} < ${lowercenter}`);
         list.insertBefore(pickedup, items.item(itemindex - 1));
     }
+    drawCanvas();
 })
 
 items[1].addEventListener('touchmove', function(e) {
     var pickedup = bsrc;
+    bsrc.style.visibility = 'visible' 
     const itemindex = getItemIndex(pickedup)
 
     var touchpos = e.targetTouches[0];
@@ -274,10 +269,12 @@ items[1].addEventListener('touchmove', function(e) {
         console.log(`${touchpos.pageX} < ${lowercenter}`);
         list.insertBefore(pickedup, items.item(itemindex - 1));
     }
+    drawCanvas();
 })
 
 items[2].addEventListener('touchmove', function(e) {
     var pickedup = csrc;
+    csrc.style.visibility = 'visible' 
     const itemindex = getItemIndex(pickedup)
 
     var touchpos = e.targetTouches[0];
@@ -292,4 +289,23 @@ items[2].addEventListener('touchmove', function(e) {
         console.log(`${touchpos.pageX} < ${lowercenter}`);
         list.insertBefore(pickedup, items.item(itemindex - 1));
     }
+    drawCanvas();
 })
+
+
+items[0].addEventListener('touchstart', () => { onTounchEnd(asrc) })
+items[1].addEventListener('touchstart', () => { onTounchEnd(bsrc) })
+items[2].addEventListener('touchstart', () => { onTounchEnd(csrc) })
+
+
+items[0].addEventListener('touchend', () => { onTounchEnd(asrc) })
+items[1].addEventListener('touchend', () => { onTounchEnd(bsrc) })
+items[2].addEventListener('touchend', () => { onTounchEnd(csrc) })
+
+function onTouchStart(sender) {
+    sender.style.visibility = 'visible'
+}
+
+function onTounchEnd(sender) {
+    sender.style.visibility = 'visible'
+}
