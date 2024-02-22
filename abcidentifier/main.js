@@ -166,29 +166,13 @@ list.addEventListener('dragend', (e) => {
 });
 
 // PHONE SUPPORT
-items[0].addEventListener("touchstart", (e) => { tapHandler(e, asrc) });
-items[1].addEventListener("touchstart", (e) => { tapHandler(e, bsrc) });
-items[2].addEventListener("touchstart", (e) => { tapHandler(e, csrc) });
+items[0].addEventListener("touchstart", tapHandler0);
+items[1].addEventListener("touchstart", tapHandler1);
+items[2].addEventListener("touchstart", tapHandler2);
 
-var tapedTwice = false;
-function tapHandler(event) {
-    if(!tapedTwice) {
-        tapedTwice = true;
-        setTimeout( function() { tapedTwice = false; }, 300 );
-        return false;
-    }
-    event.preventDefault();
-
-    let value = prompt(promptText);
-
-    if (value == null || value == "") {
-        // User cancelled the prompt
-    } else {
-        if(checkInRange(min, max, value)){
-            asrc.innerText = getFloatStr(value) + 'x²'
-        }
-    }
-}
+var tapedTwice0 = false;
+var tapedTwice1 = false;
+var tapedTwice2 = false;
 
 function tapHandler0(event) {
     if(!tapedTwice0) {
@@ -255,9 +239,9 @@ items[0].addEventListener('touchstart', () => { onTouchStart(asrc) })
 items[1].addEventListener('touchstart', () => { onTouchStart(bsrc) })
 items[2].addEventListener('touchstart', () => { onTouchStart(csrc) })
 
-items[0].addEventListener('touchmove', () => { onTouchMove(asrc) });
-items[1].addEventListener('touchmove', () => { onTouchMove(bsrc) });
-items[2].addEventListener('touchmove', () => { onTouchMove(csrc) });
+items[0].addEventListener('touchmove', (e) => { onTouchMove(e, asrc) });
+items[1].addEventListener('touchmove', (e) => { onTouchMove(e, bsrc) });
+items[2].addEventListener('touchmove', (e) => { onTouchMove(e, csrc) });
 
 items[0].addEventListener('touchend', () => { onTounchEnd(asrc) })
 items[1].addEventListener('touchend', () => { onTounchEnd(bsrc) })
@@ -271,7 +255,7 @@ function onTouchStart(sender) {
     sender.style.visibility = 'visible'
 }
 
-function onTouchMove(sender) {
+function onTouchMove(e, sender) {
     sender.style.visibility = 'visible' 
     const itemindex = getItemIndex(sender)
 
