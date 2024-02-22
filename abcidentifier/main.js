@@ -166,11 +166,30 @@ list.addEventListener('dragend', (e) => {
 });
 
 // PHONE SUPPORT
-items[0].addEventListener("touchstart", tapHandler0);
-items[1].addEventListener("touchstart", tapHandler1);
-items[2].addEventListener("touchstart", tapHandler2);
+items[0].addEventListener("touchstart", (e) => { tapHandler(e, asrc) });
+items[1].addEventListener("touchstart", (e) => { tapHandler(e, bsrc) });
+items[2].addEventListener("touchstart", (e) => { tapHandler(e, csrc) });
 
-var tapedTwice0 = false;
+var tapedTwice = false;
+function tapHandler(event) {
+    if(!tapedTwice) {
+        tapedTwice = true;
+        setTimeout( function() { tapedTwice = false; }, 300 );
+        return false;
+    }
+    event.preventDefault();
+
+    let value = prompt(promptText);
+
+    if (value == null || value == "") {
+        // User cancelled the prompt
+    } else {
+        if(checkInRange(min, max, value)){
+            asrc.innerText = getFloatStr(value) + 'x²'
+        }
+    }
+}
+
 function tapHandler0(event) {
     if(!tapedTwice0) {
         tapedTwice0 = true;
@@ -232,50 +251,29 @@ function tapHandler2(event) {
     }
 }
 
-items[0].addEventListener('touchmove', function(e) {
-    var pickedup = asrc;
-    asrc.style.visibility = 'visible' 
-    const itemindex = getItemIndex(pickedup)
+items[0].addEventListener('touchstart', () => { onTouchStart(asrc) })
+items[1].addEventListener('touchstart', () => { onTouchStart(bsrc) })
+items[2].addEventListener('touchstart', () => { onTouchStart(csrc) })
 
-    var touchpos = e.targetTouches[0];
+items[0].addEventListener('touchmove', () => { onTouchMove(asrc) });
+items[1].addEventListener('touchmove', () => { onTouchMove(bsrc) });
+items[2].addEventListener('touchmove', () => { onTouchMove(csrc) });
 
-    var uppercenter = getCenterPos(items.item(itemindex + 1))
-    var lowercenter = getCenterPos(items.item(itemindex - 1))
+items[0].addEventListener('touchend', () => { onTounchEnd(asrc) })
+items[1].addEventListener('touchend', () => { onTounchEnd(bsrc) })
+items[2].addEventListener('touchend', () => { onTounchEnd(csrc) })
 
-    if(touchpos.pageX > uppercenter){
-        console.log(`${touchpos.pageX} > ${uppercenter}`);
-        list.insertBefore(pickedup, items.item(itemindex + 2));
-    }else if(touchpos.pageX < lowercenter) {
-        console.log(`${touchpos.pageX} < ${lowercenter}`);
-        list.insertBefore(pickedup, items.item(itemindex - 1));
-    }
-    drawCanvas();
-})
+items[0].addEventListener('touchcancel', () => { onTounchEnd(asrc) })
+items[1].addEventListener('touchcancel', () => { onTounchEnd(bsrc) })
+items[2].addEventListener('touchcancel', () => { onTounchEnd(csrc) })
 
-items[1].addEventListener('touchmove', function(e) {
-    var pickedup = bsrc;
-    bsrc.style.visibility = 'visible' 
-    const itemindex = getItemIndex(pickedup)
+function onTouchStart(sender) {
+    sender.style.visibility = 'visible'
+}
 
-    var touchpos = e.targetTouches[0];
-
-    var uppercenter = getCenterPos(items.item(itemindex + 1))
-    var lowercenter = getCenterPos(items.item(itemindex - 1))
-
-    if(touchpos.pageX > uppercenter){
-        console.log(`${touchpos.pageX} > ${uppercenter}`);
-        list.insertBefore(pickedup, items.item(itemindex + 2));
-    }else if(touchpos.pageX < lowercenter) {
-        console.log(`${touchpos.pageX} < ${lowercenter}`);
-        list.insertBefore(pickedup, items.item(itemindex - 1));
-    }
-    drawCanvas();
-})
-
-items[2].addEventListener('touchmove', function(e) {
-    var pickedup = csrc;
-    csrc.style.visibility = 'visible' 
-    const itemindex = getItemIndex(pickedup)
+function onTouchMove(sender) {
+    sender.style.visibility = 'visible' 
+    const itemindex = getItemIndex(sender)
 
     var touchpos = e.targetTouches[0];
     
@@ -283,27 +281,12 @@ items[2].addEventListener('touchmove', function(e) {
     var lowercenter = getCenterPos(items.item(itemindex - 1))
 
     if(touchpos.pageX > uppercenter){
-        console.log(`${touchpos.pageX} > ${uppercenter}`);
-        list.insertBefore(pickedup, items.item(itemindex + 2));
+        list.insertBefore(sender, items.item(itemindex + 2));
     }else if(touchpos.pageX < lowercenter) {
-        console.log(`${touchpos.pageX} < ${lowercenter}`);
-        list.insertBefore(pickedup, items.item(itemindex - 1));
+        list.insertBefore(sender, items.item(itemindex - 1));
     }
+    
     drawCanvas();
-})
-
-
-items[0].addEventListener('touchstart', () => { onTounchEnd(asrc) })
-items[1].addEventListener('touchstart', () => { onTounchEnd(bsrc) })
-items[2].addEventListener('touchstart', () => { onTounchEnd(csrc) })
-
-
-items[0].addEventListener('touchend', () => { onTounchEnd(asrc) })
-items[1].addEventListener('touchend', () => { onTounchEnd(bsrc) })
-items[2].addEventListener('touchend', () => { onTounchEnd(csrc) })
-
-function onTouchStart(sender) {
-    sender.style.visibility = 'visible'
 }
 
 function onTounchEnd(sender) {
