@@ -9,7 +9,7 @@ ChipScreen.init()
 
 HexCodeScreen.init(chip, chip.get_memory())
 
-chip.load_program('programs/ibm_logo.ch8').then(() => {
+chip.load_program('programs/br8kout.ch8').then(() => {
     setInterval(() => {
         for(let i = 0; i < 100; i++) {
             chip.run_instruction()
